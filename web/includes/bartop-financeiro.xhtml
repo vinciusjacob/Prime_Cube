@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <span class="fa fa-navicon"/>
+    <h:form id="formMenu">   
+        <h:outputLabel for="btnExit" value="Sair"/>
+        <h:commandButton id="btnExit" action="#{login.Logof()}" style="display:none;" />
+    </h:form>
+    <div class="margin-center">
+        <p:link href="#"><p:graphicImage library="img" name="logo-sa2.png" width="150" styleClass="img_logo"/></p:link>
+    </div>
+</ui:composition>
+

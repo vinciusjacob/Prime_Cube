@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:outputText value="Importar Retorno"/>
+    <div class="return-content">
+        <div class="head-return"><p:outputLabel value="Serasa Experian"/></div>
+        <div class="desc-content">
+            <div class="file-custom">
+                <h:outputLabel value="Arquivo:" for="inpf" styleClass="lb-button"/>
+                <h:outputLabel value="#{uploadFile.fileName}" for="inpf" styleClass="nm-file" id="getname"/>
+            </div>
+            <h:inputFile required="true" validator="#{uploadFile.validaSerasa}" title="Insira o arquivo de retorno" value="#{uploadFile.file}" style="display:none;" styleClass="sfile" id="inpf">
+                <f:ajax render="getname"/></h:inputFile>
+            <h:commandButton value="Importar" action="#{serasa.importatxt}" onclick="PF('dlg2').show();">
+                <f:ajax render="uplabels" execute="formContent"/>
+            </h:commandButton>
+            <h:commandButton value="Cancelar"/>
+        </div>
+    </div>
+    <p:dialog header="Retorno" widgetVar="dlg2" appendTo="@(body)" height="300" width="400" resizable="true" modal="true" >
+        <h:panelGrid id="uplabels">
+            <h:outputLabel value="STATUS:"/>
+            <h:outputLabel class="margin-left" value="#{serasa.status}"/>
+            <h:outputLabel value="CNPJ DA CONVENIADA:" />
+            <h:outputLabel class="margin-left" value="#{serasa.cnpj}"/>
+            <h:outputLabel value="PERIODICIDADE:"/>
+            <h:outputLabel class="margin-left" value="#{serasa.period}"/>
+            <h:outputLabel value="PERIODO:" style="#{serasa.estilocss}"/>
+            <h:outputLabel class="margin-left" style="#{serasa.estilocss}" value="#{serasa.periodode}"/>
+            <h:outputLabel value="INCONSISTÊNCIA DA REMESSA:" />
+            <h:outputLabel class="margin-left" value="#{serasa.inconsist}"/>
+            <h:outputLabel value="INCONSISTÊNCIA LIMITE:" />
+            <h:outputLabel class="margin-left" value="#{serasa.inconslimt}"/>
+            <h:outputLabel value="DATA DO ARQUIVO:" />
+            <h:outputLabel class="margin-left" value="#{serasa.dtarquivo}"/>
+        </h:panelGrid>
+    </p:dialog> 
+</ui:composition>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <div class="return-content">
+        <div class="head-return"><p:outputLabel value="Remessa Sicoob"/></div>
+        <div class="desc-content" id="div">
+            <div class="file-custom">
+                <h:outputLabel value="Arquivo:" for="file" styleClass="lb-button"/>
+                <h:outputLabel id="fileName" value="#{uploadFile.fileName}" for="file" styleClass="nm-file"/>
+            </div>
+            <h:inputFile id="file" label="Selecionar arquivo" value="#{uploadFile.file}" required="true" style="display:none;" styleClass="sfile">
+                <f:ajax render="fileName"/>
+            </h:inputFile>
+            <h:commandButton id="btn" value="Processar" action="#{remessa.newUpload()}" >
+                <f:ajax execute="formContent" render="formContent" />
+            </h:commandButton>
+            <br/>
+            <h:outputText id="msg" value="#{remessa.msg}"/>
+            
+        </div>
+    </div>  
+    
+</ui:composition>

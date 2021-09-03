@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Prime Cube - BackOffice</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet name="css/bootstrap.css"/>
+        <h:outputStylesheet name="css/bootstrap-theme.css"/>
+        <h:outputStylesheet name="css/style.css"/>
+    </h:head>
+    <h:body onload="#{login.ProtegePagina('B')}">
+        <p:layout fullPage="true">
+            <p:layoutUnit position="north" size="52" collapsible="false" class="bar-top">
+                <ui:include src="includes/bartop-financeiro.xhtml"/>
+            </p:layoutUnit>
+            <p:layoutUnit position="west" size="220" styleClass="menu" gutter="0" visible="#{menu.visible}">
+
+                <div id="menulat">
+                    <h:form>
+                        <p:menu toggleable="true">
+                            <p:submenu label="Home" class="display">
+                            </p:submenu>
+                            <p:submenu label="Desconto Financeiro">
+                                <p:menuitem value="Pedidos" icon="ui-icon-document" action="#{pages.setPageName('backoffice/descFinanceiro')}" update=":formContent:Cent"/>
+                            </p:submenu>
+                            
+                        </p:menu>
+                        
+                    </h:form>
+                </div>
+            </p:layoutUnit>
+            <p:layoutUnit position="center" styleClass="content" gutter="0" >
+                <h:form id="formContent" enctype="multipart/form-data">
+                    <p:panel id="Cent">
+                        <ui:include src="#{pages.pageName}.xhtml" />
+                    </p:panel>
+                </h:form>
+            </p:layoutUnit>
+            
+            <p:layoutUnit position="south" size="20" styleClass="rodape" header="Copyright © 2017. Todos Direitos Reservados">
+            </p:layoutUnit>
+        </p:layout>
+    </h:body>
+</html>
+

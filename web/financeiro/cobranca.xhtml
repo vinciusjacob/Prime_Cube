@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html" 
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:outputText value="Tabela de Cobrança"/>
+    <h:form>
+    <p:dataTable widgetVar="cobrancaTable" var="kpi" value="#{cobranca.cobrancas}" 
+                 filteredValue="#{cobranca.filteredCobrancas}" scrollable="true" scrollHeight="400"
+                     scrollRows="20" liveScroll="true" >
+        <p:column filterBy="#{kpi.parcela}" filterMatchMode="in">
+            <f:facet name="filter">
+                <p:selectCheckboxMenu label="Parcela" onchange="PF('cobrancaTable').filter()" panelStyle="width:170px" class="filter-config" scrollHeight="150">
+                    <f:selectItems value="#{cobranca.parcelas}"/>   
+                </p:selectCheckboxMenu>
+                
+            </f:facet>
+            <h:outputText value="#{kpi.parcela}" />
+        </p:column>
+        
+        <p:column filterBy="#{kpi.razao}" filterMatchMode="in">
+            <f:facet name="filter">
+                <p:selectCheckboxMenu label="Razão" onchange="PF('cobrancaTable').filter()" panelStyle="width:170px" class="filter-config" scrollHeight="150">
+                    <f:selectItems value="#{cobranca.razoes}" />
+                </p:selectCheckboxMenu>
+            </f:facet>
+            <h:outputText value="#{kpi.razao}"/>
+        </p:column>
+        
+        <p:column filterBy="#{kpi.valor}" filterMatchMode="in" >
+            <f:facet name="filter">
+                <p:selectCheckboxMenu label="Valor" onchange="PF('cobrancaTable').filter()" panelStyle="width:170px" class="filter-config" scrollHeight="150">
+                    <f:selectItems value="#{cobranca.valores}"/>
+                </p:selectCheckboxMenu>
+            </f:facet>
+            <h:outputText value="#{kpi.valor}"/>
+        </p:column>
+
+    </p:dataTable>
+    </h:form>
+</ui:composition>

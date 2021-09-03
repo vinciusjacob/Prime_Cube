@@ -1,0 +1,214 @@
+*:focus{
+    background: #ffffff !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    background-color:#E6E6E6;
+    outline:none;
+}
+body{
+    background:#E6E6E6;
+    background-image:url(../img/bg-login.png);
+}
+.bar-top{
+    /* Old browsers */
+    background: #ffffff !important; 
+    /* FF3.6-15 */
+    background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%) !important;
+    /* Chrome10-25,Safari5.1-6 */ 
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%) !important; 
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%) !important; 
+    /* IE6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ) !important; 
+
+    -webkit-box-shadow: 0 0 6px 1px #d8d8d8;
+    box-shadow: 0 0 6px 1px #d8d8d8;
+    border:none;
+    border-bottom:2px #c80000 solid;
+    border-radius:0px;
+}
+.ui-widget-content{
+    *height:0px;
+    background:none;
+}
+.ui-layout-unit-header{
+    border:none;
+    border-radius:0px;
+    color:#c80000 !important;
+}
+.ui-widget-header{
+    height:0px;
+    background:none !important;
+}
+.content{
+    border:none;
+}
+.sub_menu{
+    float:right !important;
+}
+.img_logo{
+    vertical-align: middle;
+}
+.margin-center{
+    width:152px;
+    margin:0 auto 0px;
+}
+.rodape{
+    border:none;
+    text-align:center;
+    font-size:8pt;
+    border-top:1px #c80000 solid;
+    border-radius:0px;
+    line-height:8px;
+    /* Old browsers */
+    background: #ffffff !important; 
+    /* FF3.6-15 */
+    background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%) !important;
+    /* Chrome10-25,Safari5.1-6 */ 
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%) !important; 
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%) !important; 
+    /* IE6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ) !important; 
+}
+.rdp{
+    width:100%;
+    border:none !important;
+}
+.content-login{
+    border:1px #D8D8D8 solid;
+    width:320px;
+    height:280px;
+    margin:0 auto 0px;
+    margin-top:7%;
+    border-top-left-radius:6px; 
+    border-top-right-radius:6px;
+    background-color:#FFFFFF;
+}
+/**Formulario de login**/
+.box{
+
+    border:1px #d8d8d8 solid;
+    margin:0 auto 0px;
+    margin-top:150px;
+    border-top-left-radius:6px; 
+    border-top-right-radius:6px;
+    background-color:#FFFFFF;
+    -webkit-box-shadow: 0 0 6px 2px #E6E6E6;
+    box-shadow: 0 0 6px 2px #E6E6E6;
+}
+.box-head{
+    width:320px;
+    height:50px;
+    *border:1px #000000 solid;
+    background-color:#CC0000;
+    border-top-left-radius:6px; 
+    border-top-right-radius:6px;
+    border:1px #B22222 solid;
+    margin-left:-1px;
+    margin-top:-1px;
+    color:#FFFFFF;
+    font-family:lalezar;
+    text-align:center;
+    line-height:56px;
+    font-size:15pt;
+}
+.box-content{
+    width:100%;
+    height:auto;
+    *border:1px #000000 solid;
+    padding-top:20px;
+    text-align:center;
+
+}
+#fc{
+    display:none;
+}
+#li_mod{
+    font-size:9pt;
+    font-weight:bold;
+    color:#C80000;
+}
+#li_mod select{
+    border-radius:3px;
+    padding:2px;
+    border:none;
+    color:#333333;
+    cursor:pointer
+}
+#Inputs{
+    list-style:none;
+    padding:0px;
+}
+#Inputs li a{
+    font-size:9pt;
+}
+#Inputs li a:hover{
+    color:#C80000;
+}
+.form_login{
+    *border:1px #000 solid;
+    width:70%;
+    margin:0 auto 0px;
+    margin-top:5%;
+}
+.form_login #Inputs li .btn_entrar{
+    width:100% !important;
+    margin-bottom:5px;
+}
+.form_login #Inputs li .btn_entrar:focus{
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important
+        outline:none;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e5e5e5+100;White+3D */
+    background: #ffffff !IMPORTANT; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%) !IMPORTANT; /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%) !IMPORTANT; /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%) !IMPORTANT; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ) !IMPORTANT; /* IE6-9 */
+    border:1px gray solid !IMPORTANT;
+}
+.form_login #Inputs li .inp{
+    margin-bottom:8px !important;
+    width:100%;
+    height:32px;
+    font-weight:bold;
+    border-radius:4px;
+}
+.form_login #Inputs li input[type="submit"]:hover{
+    *background-color:#CC0000;
+    *border:1px #ff0000 solid;
+    *border-bottom:2px #800000 solid;
+    *color:#FFFFFF;
+    *-webkit-transition: all 400ms ease;
+    *-moz-transition: all 1500ms ease;
+    *-ms-transition: all 1500ms ease;
+    *-o-transition: all 1500ms ease;
+    *transition: all 1500ms ease;
+}
+.box-content #Inputs li input[type="submit"]:active{
+    *border:none;
+    *-webkit-transition: all 400ms ease;
+    *-moz-transition: all 1500ms ease;
+    *-ms-transition: all 1500ms ease;
+    *-o-transition: all 1500ms ease;
+    *transition: all 1500ms ease;
+    background-color:#E6E6E6 !important;
+    border:1px #d8d8d8 solid;
+}
+.ui-selectonemenu-panel .ui-selectonemenu-list{
+    background-color:#F2F2F2;
+}
+#formLogin .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus{
+    background-color:#FFFFFF;
+}
+#formLogin .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+    background-color:#C80000;
+    border:1px #880000 solid;
+}
+#formLogin .ui-selectonemenu .ui-selectonemenu-trigger .ui-icon{
+    margin-top:7px;
+    margin-left:-10px;
+}

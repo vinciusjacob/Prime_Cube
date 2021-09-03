@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Prime Cube - Financeiro</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet name="css/bootstrap.css"/>
+        <h:outputStylesheet name="css/bootstrap-theme.css"/>
+        <h:outputStylesheet name="css/style.css"/>
+    </h:head>
+    <h:body  onload="#{login.ProtegePagina('F')}">
+        <p:layout fullPage="true">
+            <p:layoutUnit position="north" size="52" collapsible="false" class="bar-top">
+                <ui:include src="includes/bartop-financeiro.xhtml"/>
+            </p:layoutUnit>
+            <p:layoutUnit position="west" size="220" styleClass="menu" gutter="0" visible="#{menu.visible}">
+                <div id="menulat">
+                    <h:form>
+                        <p:menu toggleable="true">
+                            <p:submenu label="Cadastro" expanded="false">
+                                <p:menuitem value="Save" icon="ui-icon-disk" action="#{pages.setPageName('financeiro/principal')}" update=":formContent:Cent"/>
+                                <p:menuitem value="Update" icon="ui-icon-arrowrefresh-1-w" action="#{pages.setPageName('includes/bartop')}" update=":formContent:Cent"/>
+                            </p:submenu>
+                            <p:submenu label="Cobrança">
+                                <p:menuitem value="Kpi" icon="ui-icon-newwin" action="#{pages.setPageName('financeiro/cobranca')}" update=":formContent:Cent"/>
+                            </p:submenu>
+                            <p:submenu label="Arquivo de texto">
+                                <p:menuitem value="Importar" icon="ui-icon-document-b" action="#{pages.setPageName('financeiro/importartxt')}" update=":formContent:Cent"/>
+                                <p:menuitem value="Listar" icon="ui-icon-clipboard" action="#{pages.setPageName('financeiro/listartxts')}" update=":formContent:Cent"/>
+                            </p:submenu>
+                            <p:submenu label="Serasa Experian">
+                                <p:menuitem value="Importar Retorno" icon="ui-icon-document" action="#{pages.setPageName('financeiro/importaretorno')}" update=":formContent:Cent"/>
+                            </p:submenu>
+                            <p:submenu label="Remessa">
+                                <p:menuitem value="Remessa Sicoob" icon="ui-icon-document" action="#{pages.setPageName('financeiro/remessaSicoob')}" update=":formContent:Cent"/>
+                            </p:submenu>
+                            <p:submenu label="Indicadores" icon="ui-icon-stop" expanded="false" class="display"/>
+                        </p:menu>
+                    </h:form>
+                </div>
+            </p:layoutUnit>
+            
+            <p:layoutUnit position="center" styleClass="content" gutter="0" >
+                <h:form id="formContent" enctype="multipart/form-data">
+                    <p:panel id="Cent">
+                        <ui:include src="#{pages.pageName}.xhtml" />
+                    </p:panel>
+                </h:form>
+            </p:layoutUnit>
+            
+            <p:layoutUnit position="south" size="20" styleClass="rodape" gutter="0" header="Copyright © 2017. Todos Direitos Reservados">
+            </p:layoutUnit>
+        </p:layout>
+    </h:body>
+</html>

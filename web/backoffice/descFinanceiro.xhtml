@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <p:outputLabel id="msgs" value="#{descFinanceiro.msg}"/>
+    
+    <p:dataTable widgetVar="descTable" var="desc" value="#{descFinanceiro.descontos}" 
+                 filteredValue="#{descFinanceiro.filteredDesc}" scrollable="true" scrollHeight="490" scrollWidth="95%"
+                 scrollRows="20" liveScroll="true" editable="true" editMode="cell">
+        
+        <p:column filterBy="#{desc.empresa}" filterMatchMode="in" width="110" style="text-align:center !IMPORTANT;">
+            <f:facet name="filter">
+                <p:selectCheckboxMenu filter="true" label="Empresa" onchange="PF('descTable').filter()" panelStyle="width:250px" class="filter-config" scrollHeight="300">
+                    <f:selectItems value="#{descFinanceiro.empresas}"/>
+                </p:selectCheckboxMenu>
+            </f:facet>
+            <h:outputText value="#{desc.empresa}"/>
+        </p:column>
+        <p:column filterBy="#{desc.supervisor}" filterMatchMode="in" width="250" >
+            <f:facet name="filter">
+                <p:selectCheckboxMenu filter="true" label="Supervisor" onchange="PF('descTable').filter()" panelStyle="width:250px" class="filter-config" scrollHeight="300">
+                    <f:selectItems value="#{descFinanceiro.supervisor}"/>
+                </p:selectCheckboxMenu>
+            </f:facet>
+            <h:outputText value="#{desc.supervisor}"/>
+        </p:column>
+        <p:column filterBy="#{desc.vendedor}" filterMatchMode="in" width="250" >
+            <f:facet name="filter">
+                <p:selectCheckboxMenu filter="true" label="Vendedor" onchange="PF('descTable').filter()" panelStyle="width:250px" class="filter-config" scrollHeight="300">
+                    <f:selectItems value="#{descFinanceiro.vendedor}"/>
+                </p:selectCheckboxMenu>
+            </f:facet>
+            <h:outputText value="#{desc.vendedor}"/>
+        </p:column>
+        <p:column filterBy="#{desc.pedido}" filterMatchMode="in" width="100" style="text-align:center !IMPORTANT;">
+            <f:facet name="filter">
+                <p:selectCheckboxMenu filter="true" label="Pedidos" onchange="PF('descTable').filter()" panelStyle="width:250px" class="filter-config" scrollHeight="300">
+                    <f:selectItems value="#{descFinanceiro.pedidos}"/>
+                </p:selectCheckboxMenu>
+            </f:facet>
+            <h:outputText value="#{desc.pedido}" />
+        </p:column>
+        <p:column filterBy="#{desc.descPro}" filterMatchMode="in" width="400">
+            <f:facet name="filter">
+                <p:selectCheckboxMenu filter="true" label="Descrição" onchange="PF('descTable').filter()" panelStyle="width:300px" class="filter-config" scrollHeight="300">
+                    <f:selectItems value="#{descFinanceiro.descricao}"/>
+                </p:selectCheckboxMenu>
+            </f:facet>
+            <h:outputText value="#{desc.descPro}" />
+        </p:column>
+        <p:column filterBy="#{desc.vlrun}" filterMatchMode="in" width="110" style="text-align:center !IMPORTANT;">
+            <f:facet name="filter">
+                <p:selectCheckboxMenu filter="true" label="Preço Un" onchange="PF('descTable').filter()" panelStyle="width:250px" class="filter-config" scrollHeight="300">
+                    <f:selectItems value="#{descFinanceiro.prUn}"/>
+                </p:selectCheckboxMenu>
+            </f:facet>
+            <p:cellEditor>
+                <f:facet name="output"><h:outputText value="#{desc.vlrun}" /></f:facet>
+                <f:facet name="input">
+                    <p:inputText value="#{desc.vlrun}" validator="#{descFinanceiro.is}" style="width:96%" styleClass="inputh"/>     
+                </f:facet>
+            </p:cellEditor>
+        </p:column>
+        <p:column filterBy="#{desc.obs}" filterMatchMode="in" width="400">
+            <f:facet name="filter">
+                <p:selectCheckboxMenu filter="true" label="Obs" onchange="PF('descTable').filter()" panelStyle="width:300px" class="filter-config" scrollHeight="300">
+                    <f:selectItems value="#{descFinanceiro.obs}"/>
+                </p:selectCheckboxMenu>
+            </f:facet>
+            <h:outputText value="#{desc.obs}"/>
+        </p:column>
+    </p:dataTable>
+</ui:composition>
